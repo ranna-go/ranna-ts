@@ -78,7 +78,7 @@ export class Client {
       }
     );
 
-    if (res.ok) {
+    if (!res.ok) {
       try {
         const data = await res.json();
         throw data as ErrorResponse;
