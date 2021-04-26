@@ -1,3 +1,4 @@
+import { APIError, ResponseError } from './errors';
 import {
   ErrorResponse,
   ExecutionRequest,
@@ -81,9 +82,9 @@ export class Client {
     if (!res.ok) {
       try {
         const data = await res.json();
-        throw data as ErrorResponse;
+        throw new APIError(data);
       } catch {
-        throw new Error(`request failed: ${res.status}`);
+        throw new ResponseError(res);
       }
     }
 

@@ -4,6 +4,7 @@ export interface Spec {
   cmd: string;
   filename: string;
   use: string;
+  registry: string;
 }
 
 export type SpecMap = { [key: string]: Spec };
@@ -20,10 +21,11 @@ export interface ExecutionRequest {
 export interface ExecutionResponse {
   stdout: string;
   stderr: string;
+  exectimems: number;
 }
 
 export interface ErrorResponse {
   error: string;
   code: number;
-  conext: string;
+  context: string;
 }
