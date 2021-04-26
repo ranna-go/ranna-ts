@@ -1,0 +1,13 @@
+{
+  "name": "ranna-ts",
+  "version": "1.0.0",
+  "description": "REST API wrapper for ranna.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "zekroTJA",
+  "license": "MIT"
+}
