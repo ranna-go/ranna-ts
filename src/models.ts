@@ -29,3 +29,11 @@ export interface ErrorResponse {
   code: number;
   context: string;
 }
+
+export interface Snippet {
+  id: string;
+  timestamp: string;
+  ident: string;
+  language: string;
+  code: string;
+}
