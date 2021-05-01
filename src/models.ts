@@ -37,3 +37,15 @@ export interface Snippet {
   language: string;
   code: string;
 }
+
+export interface SandboxInfo {
+  type: string;
+  version: string;
+}
+
+export interface SystemInfo {
+  sandbox: SandboxInfo;
+  version: string;
+  builddate: string;
+  go_version: string;
+}

@@ -1,4 +1,9 @@
-import { ExecutionRequest, ExecutionResponse, SpecMap } from './models';
+import {
+  ExecutionRequest,
+  ExecutionResponse,
+  SpecMap,
+  SystemInfo,
+} from './models';
 import { ClientOptions, RequestClient } from './request';
 
 const defaultOptions: ClientOptions = {
@@ -41,5 +46,13 @@ export class Client extends RequestClient {
    */
   public exec(req: ExecutionRequest): Promise<ExecutionResponse> {
     return this.request('POST', 'exec', req);
+  }
+
+  /**
+   * Request service information.
+   * @returns
+   */
+  public info(): Promise<SystemInfo> {
+    return this.request('GET', 'info');
   }
 }
