@@ -30,9 +30,12 @@ export interface ErrorResponse {
   context: string;
 }
 
-export interface Snippet {
+export interface Entity {
   id: string;
   timestamp: string;
+}
+
+export interface Snippet extends Entity {
   ident: string;
   language: string;
   code: string;
@@ -48,4 +51,16 @@ export interface SystemInfo {
   version: string;
   builddate: string;
   go_version: string;
+}
+
+export interface User extends Entity {
+  username: string;
+}
+
+export interface UserCreate extends User {
+  masterkey: string;
+}
+
+export interface Token {
+  token: string;
 }

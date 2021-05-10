@@ -44,4 +44,8 @@ export class RequestClient {
 
     return res.json();
   }
+
+  public get clientOptions(): ClientOptions {
+    return this.options;
+  }
 }
