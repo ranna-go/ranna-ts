@@ -44,8 +44,11 @@ export class Client extends RequestClient {
    * @param req Execution request
    * @returns Execution response
    */
-  public exec(req: ExecutionRequest): Promise<ExecutionResponse> {
-    return this.request('POST', 'exec', req);
+  public exec(
+    req: ExecutionRequest,
+    bypassCache: boolean = false
+  ): Promise<ExecutionResponse> {
+    return this.request('POST', `exec?bypass_cache=${bypassCache}`, req);
   }
 
   /**
