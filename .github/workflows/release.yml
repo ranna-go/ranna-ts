@@ -16,7 +16,7 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npx gitv
-      - run: npm ci
+      # - run: npm ci
       - run: npm run build
       - run: npm publish
         env:
