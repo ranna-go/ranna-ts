@@ -108,7 +108,7 @@ export class SnippetsClient extends RequestClient {
    *
    * @returns
    */
-  public list(): Promise<Snippet> {
+  public list(): Promise<Snippet[]> {
     return this.request('GET', 'snippets');
   }
 
