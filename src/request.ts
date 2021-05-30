@@ -33,6 +33,10 @@ export class RequestClient {
       }
     );
 
+    if (res.status === 204) {
+      return {} as T;
+    }
+
     if (!res.ok) {
       try {
         const data = await res.json();
