@@ -2,18 +2,24 @@ import { ErrorResponse } from './models';
 
 export class APIError extends Error implements ErrorResponse {
   private _code: number;
+  private _status: number;
   private _error: string;
   private _context: string;
 
   constructor(res: ErrorResponse) {
     super(res.error);
     this._code = res.code;
+    this._status = res.status;
     this._error = res.error;
     this._context = res.context;
   }
 
   public get code(): number {
     return this._code;
+  }
+
+  public get status(): number {
+    return this._status;
   }
 
   public get error(): string {

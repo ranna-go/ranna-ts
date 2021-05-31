@@ -27,6 +27,7 @@ export interface ExecutionResponse {
 export interface ErrorResponse {
   error: string;
   code: number;
+  status: number;
   context: string;
 }
 

@@ -38,12 +38,13 @@ export class RequestClient {
     }
 
     if (!res.ok) {
+      let data;
       try {
-        const data = await res.json();
-        throw new APIError(data);
+        data = await res.json();
       } catch {
         throw new ResponseError(res);
       }
+      throw new APIError(data);
     }
 
     return res.json();
