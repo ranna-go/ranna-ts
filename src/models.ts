@@ -22,6 +22,8 @@ export interface ExecutionResponse {
   stdout: string;
   stderr: string;
   exectimems: number;
+  from_cache: boolean;
+  cache_date: string;
 }
 
 export interface ErrorResponse {
