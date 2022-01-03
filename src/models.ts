@@ -5,6 +5,7 @@ export interface Spec {
   filename: string;
   use: string;
   registry: string;
+  example: string;
 }
 
 export type SpecMap = { [key: string]: Spec };
