@@ -53,4 +53,12 @@ export class RequestClient {
   public get clientOptions(): ClientOptions {
     return this.options;
   }
+
+  public get clientEndpoint(): string {
+    return this.endpoint;
+  }
+
+  public set clientEndpoint(v: string) {
+    this.endpoint = v;
+  }
 }
