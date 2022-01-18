@@ -1,3 +1,8 @@
+export interface Inline {
+  import_regex: string;
+  template: string;
+}
+
 export interface Spec {
   image: string;
   entrypoint: string;
@@ -6,6 +11,7 @@ export interface Spec {
   use: string;
   registry: string;
   example: string;
+  inline: Inline;
 }
 
 export type SpecMap = { [key: string]: Spec };
@@ -17,6 +23,7 @@ export interface ExecutionRequest {
   code: string;
   arguments?: string[];
   environment?: StringMap;
+  inline_expression: boolean;
 }
 
 export interface ExecutionResponse {
