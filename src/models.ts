@@ -48,6 +48,7 @@ export interface Entity {
 
 export interface Snippet extends Entity {
   ident: string;
+  displayname: string;
   language: string;
   code: string;
 }

@@ -131,6 +131,15 @@ export class SnippetsClient extends RequestClient {
   }
 
   /**
+   * Updates a snippet with the passed content.
+   * @param snippet
+   * @returns
+   */
+  public update(snippet: Snippet): Promise<Snippet> {
+    return this.request('POST', `snippets/${snippet.ident}`, snippet);
+  }
+
+  /**
    * Deletes a snipped by its ident or ID.
    *
    * This endpoint required authorization by the owner of
