@@ -10,6 +10,7 @@ export interface Spec {
   filename: string;
   use: string;
   registry: string;
+  language: string;
   example: string;
   inline: Inline;
 }
