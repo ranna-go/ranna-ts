@@ -1,3 +1,20 @@
+import { ExecutionRequest } from '../models';
+
+export interface EventDataMap {
+  [EventCode.PONG]: string;
+  [EventCode.ERROR]: string;
+  [EventCode.SPAWN]: RunID;
+  [EventCode.LOG]: LogData;
+  [EventCode.STOP]: StopData;
+  [EventCode.KILL]: null;
+}
+
+export interface OpArgsMap {
+  [OpCode.PING]: null;
+  [OpCode.EXEC]: ExecutionRequest;
+  [OpCode.KILL]: RunID;
+}
+
 export enum EventCode {
   PONG,
   ERROR,

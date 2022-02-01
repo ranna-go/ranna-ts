@@ -1,28 +1,11 @@
-import { ExecutionRequest } from '../models';
 import {
   EventCode,
   Event,
-  RunID,
-  LogData,
-  StopData,
   OpCode,
   Operation,
+  OpArgsMap,
+  EventDataMap,
 } from './models';
-
-interface EventDataMap {
-  [EventCode.PONG]: string;
-  [EventCode.ERROR]: string;
-  [EventCode.SPAWN]: RunID;
-  [EventCode.LOG]: LogData;
-  [EventCode.STOP]: StopData;
-  [EventCode.KILL]: null;
-}
-
-interface OpArgsMap {
-  [OpCode.PING]: null;
-  [OpCode.EXEC]: ExecutionRequest;
-  [OpCode.KILL]: RunID;
-}
 
 /**
  * WebSocket client to connect to the ranna WebSocket API,
