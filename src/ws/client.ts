@@ -58,8 +58,8 @@ export class WebSocketClient {
    */
   public onEvent<TK extends EventCode, TE extends Event<EventDataMap[TK]>>(
     code: TK,
-    handler: (e: TE) => () => void
-  ) {
+    handler: (e: TE) => void
+  ): () => void {
     return this.addListener('message', (e) => {
       const eData = JSON.parse(e.data) as TE;
       if (eData.code === code) handler(eData);
