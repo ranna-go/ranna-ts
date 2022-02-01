@@ -5,6 +5,7 @@ import {
   SystemInfo,
 } from './models';
 import { ClientOptions, RequestClient } from './request';
+import { WebSocketClient } from './ws/client';
 
 const defaultOptions: ClientOptions = {
   version: 'v1',
@@ -57,5 +58,19 @@ export class Client extends RequestClient {
    */
   public info(): Promise<SystemInfo> {
     return this.request('GET', 'info');
+  }
+
+  /**
+   * Connects to the ranna WebSocket API using
+   * the specified endpoint.
+   * @returns the websocket client.
+   */
+  public connectWs(): WebSocketClient {
+    let endpoint = this.clientEndpoint;
+    if (endpoint.startsWith('https://'))
+      endpoint = 'wss://' + endpoint.substring(8);
+    else if (endpoint.startsWith('http://'))
+      endpoint = 'ws://' + endpoint.substring(7);
+    return new WebSocketClient(endpoint);
   }
 }
