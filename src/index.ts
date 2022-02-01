@@ -21,4 +21,5 @@ export {
   Nonced,
   OpCode,
   RunID,
+  WsError,
 } from './ws/models';

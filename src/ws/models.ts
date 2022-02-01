@@ -2,7 +2,7 @@ import { ExecutionRequest } from '../models';
 
 export interface EventDataMap {
   [EventCode.PONG]: string;
-  [EventCode.ERROR]: string;
+  [EventCode.ERROR]: WsError;
   [EventCode.SPAWN]: RunID;
   [EventCode.LOG]: LogData;
   [EventCode.STOP]: StopData;
@@ -55,4 +55,9 @@ export interface LogData extends RunID {
 
 export interface StopData extends RunID {
   exectimems: number;
+}
+
+export interface WsError {
+  code: number;
+  message: string;
 }
