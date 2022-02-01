@@ -31,7 +31,7 @@ export class WebSocketClient {
    * @param args The operation arguments.
    * @param nonce Optional nonce.
    */
-  public op<TK extends OpCode, TE extends Operation<OpArgsMap[TK]>>(
+  public op<TK extends OpCode, TE extends OpArgsMap[TK]>(
     op: TK,
     args: TE,
     nonce?: number
@@ -41,7 +41,7 @@ export class WebSocketClient {
         op,
         args,
         nonce,
-      })
+      } as Operation<TE>)
     );
   }
 
