@@ -71,6 +71,6 @@ export class Client extends RequestClient {
       endpoint = 'wss://' + endpoint.substring(8);
     else if (endpoint.startsWith('http://'))
       endpoint = 'ws://' + endpoint.substring(7);
-    return new WebSocketClient(endpoint);
+    return new WebSocketClient(`${endpoint}/${this.clientOptions.version}/ws`);
   }
 }
