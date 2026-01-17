@@ -1,5 +1,5 @@
 {
-  "name": "@ranna-go/ranna-ts",
+  "name": "ranna-ts",
   "version": "1.4.6",
   "description": "REST API wrapper for ranna.",
   "main": "dist/index.js",
